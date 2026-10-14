@@ -3,7 +3,7 @@
         <!-- 展开时：Logo + 搜索/折叠按钮同行 -->
         <div class="logo_row" v-if="!uiStore.sidebarCollapsed">
             <div class="logo_box" @click="router.push('/platform/knowledge-bases')" style="cursor: pointer;">
-                <img class="logo" src="@/assets/img/weknora.png" alt="">
+                <img class="logo" src="@/assets/img/zhichuan-x-agent.png" alt="智川 X-Agent">
                 <sup v-if="isLiteEdition" class="lite-badge">Lite</sup>
             </div>
             <div class="logo_actions">
@@ -1337,9 +1337,7 @@ const resizeSidebar = (delta: number, keyboard: boolean) => {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        // 保留侧栏顶部留白，让 Logo 和操作按钮与窗口顶边保持舒适间距
-        height: 39px;
-        margin: 0 0 4px;
+        height: 70px;
         flex-shrink: 0;
         padding: 0 2px 0 var(--sidebar-inset-x);
     }
@@ -1371,8 +1369,9 @@ const resizeSidebar = (delta: number, keyboard: boolean) => {
         overflow: hidden;
 
         .logo {
-            width: 108px;
+            width: 142px;
             height: auto;
+            object-fit: contain;
         }
 
         .lite-badge {
@@ -1975,9 +1974,11 @@ const resizeSidebar = (delta: number, keyboard: boolean) => {
 }
 </style>
 <style lang="less">
-// Dark mode: invert dark logo to light
+// Dark mode: keep the blue/cyan brand mark readable on the dark sidebar.
 html[theme-mode="dark"] .aside_box .logo_box .logo {
-    filter: invert(1) hue-rotate(180deg);
+    padding: 4px 7px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.92);
 }
 
 // Dark mode: 滚动条在深色背景下需要更亮的颜色才看得见
