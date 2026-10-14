@@ -3,8 +3,7 @@
         <!-- 展开时：Logo + 搜索/折叠按钮同行 -->
         <div class="logo_row" v-if="!uiStore.sidebarCollapsed">
             <div class="logo_box" @click="router.push('/platform/knowledge-bases')" style="cursor: pointer;">
-                <img class="logo" src="https://dibrain-uat.wenge.com/assets/zhichuan-x-agent-D6yBv7me.png"
-                    alt="智川 X-Agent">
+                <img class="logo" src="@/assets/img/zhichuan-x-agent.png" alt="智川 X-Agent">
                 <sup v-if="isLiteEdition" class="lite-badge">Lite</sup>
             </div>
             <div class="logo_actions">
