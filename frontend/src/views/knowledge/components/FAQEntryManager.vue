@@ -2449,10 +2449,10 @@ const downloadExampleOptions = computed(() => [
 // 示例数据
 const exampleData: FAQEntryPayload[] = [
   {
-    standard_question: '什么是 WeKnora？',
-    answers: ['WeKnora 是一个智能知识库管理系统', '它支持多种知识库类型和导入方式'],
-    similar_questions: ['WeKnora 是什么？', '介绍一下 WeKnora'],
-    negative_questions: ['这不是 WeKnora', '与 WeKnora 无关'],
+    standard_question: '什么是智川 X-Agent？',
+    answers: ['智川 X-Agent 是一个企业级智能体与知识管理平台', '它支持多种知识库类型和导入方式'],
+    similar_questions: ['智川 X-Agent 是什么？', '介绍一下智川 X-Agent'],
+    negative_questions: ['这不是智川 X-Agent', '与智川 X-Agent 无关'],
     tag_name: '产品介绍',
   },
   {

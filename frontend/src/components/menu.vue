@@ -3,7 +3,8 @@
         <!-- 展开时：Logo + 搜索/折叠按钮同行 -->
         <div class="logo_row" v-if="!uiStore.sidebarCollapsed">
             <div class="logo_box" @click="router.push('/platform/knowledge-bases')" style="cursor: pointer;">
-                <img class="logo" src="@/assets/img/weknora.png" alt="">
+                <img class="logo" src="https://dibrain-uat.wenge.com/assets/zhichuan-x-agent-D6yBv7me.png"
+                    alt="智川 X-Agent">
                 <sup v-if="isLiteEdition" class="lite-badge">Lite</sup>
             </div>
             <div class="logo_actions">
@@ -1227,7 +1228,7 @@ const onDragHandleMouseDown = (e: MouseEvent) => {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 50px;
+        height: 70px;
         flex-shrink: 0;
         padding: 0 10px 0 var(--sidebar-inset-x);
     }
@@ -1273,8 +1274,9 @@ const onDragHandleMouseDown = (e: MouseEvent) => {
         overflow: hidden;
 
         .logo {
-            width: 128px;
+            width: 142px;
             height: auto;
+            object-fit: contain;
         }
 
         .lite-badge {
@@ -1889,9 +1891,11 @@ const onDragHandleMouseDown = (e: MouseEvent) => {
 }
 </style>
 <style lang="less">
-// Dark mode: invert dark logo to light
+// Dark mode: keep the blue/cyan brand mark readable on the dark sidebar.
 html[theme-mode="dark"] .aside_box .logo_box .logo {
-    filter: invert(1) hue-rotate(180deg);
+    padding: 4px 7px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.92);
 }
 
 // Dark mode: 滚动条在深色背景下需要更亮的颜色才看得见

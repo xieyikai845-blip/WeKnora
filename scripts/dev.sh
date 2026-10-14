@@ -273,9 +273,9 @@ start_services() {
         log_success "基础设施服务已启动"
         echo ""
         log_info "服务访问地址:"
-        echo "  - PostgreSQL:    localhost:5432"
-        echo "  - Redis:         localhost:6379"
-        echo "  - DocReader:     localhost:50051"
+        echo "  - PostgreSQL:    localhost:${DB_PORT:-5432}"
+        echo "  - Redis:         localhost:${REDIS_PORT:-6379}"
+        echo "  - DocReader:     localhost:${DOCREADER_PORT:-50051}"
         
         # 根据启用的 profile 显示额外服务
         if [[ "$ENABLED_SERVICES" == *"minio"* ]]; then
@@ -480,9 +480,9 @@ start_app() {
         fi
     else
         export DB_HOST=127.0.0.1
-        export DOCREADER_ADDR=127.0.0.1:50051
+        export DOCREADER_ADDR=127.0.0.1:${DOCREADER_PORT:-50051}
         export MINIO_ENDPOINT=127.0.0.1:9000
-        export REDIS_ADDR=127.0.0.1:6379
+        export REDIS_ADDR=127.0.0.1:${REDIS_PORT:-6379}
         export MILVUS_ADDRESS=127.0.0.1:19530
         export NEO4J_URI=bolt://127.0.0.1:7687
         export QDRANT_HOST=127.0.0.1
